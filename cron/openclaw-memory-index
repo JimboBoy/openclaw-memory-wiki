@@ -1,0 +1,12 @@
+#!/bin/bash
+# OpenClaw Memory Wiki - Daily Indexer Cron Job
+# 
+# Install: sudo cp cron/openclaw-memory-index /etc/cron.d/
+# Schedule: Daily at 2:00 AM
+
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+OPENCLAW_WORKSPACE=/Users/openclawassistent/.openclaw/workspace
+
+# Run daily at 2:00 AM
+0 2 * * * root /usr/bin/python3 /Users/openclawassistent/.openclaw/workspace/openclaw-memory-wiki/scripts/daily-indexer.py >> /var/log/openclaw-memory-index.log 2>&1
